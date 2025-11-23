@@ -13,12 +13,7 @@ public class Credenciado extends Cliente{
         this.desconto_default = desconto_default;
     }
 
-
-    protected void Inativar() {
-        this.setAtivo(false);
-    }
-
-    protected void EditarDados(int[] opcoes, String[] alteracoes) {
+    public void EditarDados(int[] opcoes, String[] alteracoes) {
         if(opcoes.length<=0 || alteracoes.length<=0) { // Tratamento de exceção
             System.out.println("Dados inválidos. Operação cancelada.");
             if(opcoes.length !=  alteracoes.length) {
@@ -49,7 +44,6 @@ public class Credenciado extends Cliente{
             }
         }
     }//EditarDados end
-
     public void criar_cartao(){
         this.possui_cartao = true;
     }

@@ -17,11 +17,11 @@ public class Cliente extends Pessoa {
 
     }
 
-    protected void Inativar() {
+    public void inativar() {
         this.setAtivo(false);
     }
 
-    protected void EditarDados(int[] opcoes, String[] alteracoes) {
+    public void EditarDados(int[] opcoes, String[] alteracoes) {
         if(opcoes.length<=0 || alteracoes.length<=0) { // Tratamento de exceção
             System.out.println("Dados inválidos. Operação cancelada.");
             if(opcoes.length !=  alteracoes.length) {

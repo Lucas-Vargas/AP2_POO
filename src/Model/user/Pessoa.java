@@ -5,7 +5,7 @@ public abstract class Pessoa {
     protected String cpf;
     protected boolean ativo;
 
-    abstract void Inativar();
+    abstract void inativar();
     abstract void EditarDados(int[] opcoes, String[] alteracoes);
 
 
@@ -19,4 +19,5 @@ public abstract class Pessoa {
     protected void setNome(String nome) {
         this.nome = nome;
     }
+
 }
