@@ -6,6 +6,13 @@ public class Credenciado extends Cliente{
     private boolean possui_cartao;
     private double desconto_default;
 
+    public Credenciado(String nome, String cpf, String telefone, String email, int codigo, boolean possui_cartao, double desconto_default) {
+        super(nome, cpf, telefone, email);
+        this.codigo = codigo;
+        this.possui_cartao = possui_cartao;
+        this.desconto_default = desconto_default;
+    }
+
 
     protected void Inativar() {
         this.setAtivo(false);
@@ -36,7 +43,7 @@ public class Credenciado extends Cliente{
                 case 4:
                     this.email = alteracoes[i]; break;
                 case 5:
-                    this.debito = alteracoes[i]; break;
+                    this.debito = Double.parseDouble(alteracoes[i]); break;
                 default:
                     System.out.println("Dados inválidos");
             }

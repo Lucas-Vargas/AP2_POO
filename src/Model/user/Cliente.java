@@ -5,7 +5,17 @@ public class Cliente extends Pessoa {
 
     protected String telefone;
     protected String email;
-    protected String debito;
+    protected double debito;
+
+    public Cliente(String nome, String cpf, String telefone, String email) {
+        this.nome = nome;
+        this.cpf = cpf;
+        this.telefone = telefone;
+        this.email = email;
+        this.debito = 0.0;
+        this.ativo = true;
+
+    }
 
     protected void Inativar() {
         this.setAtivo(false);
@@ -36,7 +46,7 @@ public class Cliente extends Pessoa {
                 case 4:
                     this.email = alteracoes[i]; break;
                 case 5:
-                    this.debito = alteracoes[i]; break;
+                    this.debito = Double.parseDouble(alteracoes[i]); break;
                 default:
                     System.out.println("Dados inválidos");
             }

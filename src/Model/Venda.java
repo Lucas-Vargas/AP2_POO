@@ -32,6 +32,14 @@ public class Venda {
         this.devolvido = false;
         this.existe = true;
 
+        for(int i = 0; i < produto.length-1; i++)
+        {
+            if(produto[i].getEstoque().getQuantidade() != 0){
+                //subtrai 1 do estoque do produto
+                produtos[i].getEstoque().setQuantidade(produto[i].getEstoque().getQuantidade()-1);
+            }
+        }
+
         int id_temp = this.getIdFile();
         if(id_temp == -1){
             this.setIdFile(1);
@@ -86,6 +94,14 @@ public class Venda {
     }
     public void devolver(){
         this.devolvido = true;
+        for(int i = 0; i < produto.length; i++){
+            if(produto[i].getEstoque().getQuantidade() != 0){
+                //adiciona um no estoque do produto novamente
+                produto[i].getEstoque().setQuantidade(produto[i].getEstoque().getQuantidade()+1);
+            }
+        }
     }
-
+    public int getId_venda() {
+        return id_venda;
+    }
 }// class

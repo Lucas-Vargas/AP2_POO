@@ -1,9 +1,19 @@
 package Model.user;
+import Model.Loja;
 
 public class Vendedor extends Pessoa {
 
     private double comissao, salario;
-    private int loja;
+    private Loja loja;
+
+    public Vendedor(String nome, String cpf, double comissao, double salario, Loja loja) {
+        this.nome = nome;
+        this.cpf = cpf;
+        this.ativo = true;
+        this.comissao = comissao;
+        this.salario = salario;
+        this.loja = loja;
+    }
 
     protected void Inativar() {
         this.setAtivo(false);
@@ -39,5 +49,4 @@ public class Vendedor extends Pessoa {
             }
         }
     }//EditarDados end
-
 }

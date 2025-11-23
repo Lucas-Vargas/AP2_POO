@@ -1,9 +1,9 @@
 package Model.user;
 
 public abstract class Pessoa {
-    private String nome;
-    private String cpf;
-    private boolean ativo;
+    protected String nome;
+    protected String cpf;
+    protected boolean ativo;
 
     abstract void Inativar();
     abstract void EditarDados(int[] opcoes, String[] alteracoes);
