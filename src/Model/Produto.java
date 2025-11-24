@@ -1,60 +1,56 @@
 package Model;
 
 public class Produto {
-    private String nome, descricao;
+    private int id;
+    private String nome;
+    private String descricao;
     private double preco;
-    private Estoque estoque;
-    private boolean existe = true;
+    private boolean existe;
 
-    public Produto(String nome, String descricao, double preco, Estoque estoque){
+    public Produto(int id, String nome, double preco) {
+        this.id = id;
         this.nome = nome;
-        this.descricao = descricao;
+        this.descricao = ""; // descrição opcional
         this.preco = preco;
-        this.estoque = estoque;
         this.existe = true;
     }
 
-    public boolean ValidarPreco(double preco) {
-        return preco > 0;
+    public Produto(int id, String nome, String descricao, double preco) {
+        this.id = id;
+        this.nome = nome;
+        this.descricao = descricao;
+        this.preco = preco;
+        this.existe = true;
     }
 
-    // Ajustei a assinatura para (nome, descricao) para bater com os testes
-    public boolean ValidarnomeDesc(String nome, String descricao) {
-        if(nome == null || descricao == null) return false;
-        return !nome.isEmpty() && !descricao.isEmpty();
-    }
-
-    public double getPreco() {
-        return preco;
-    }
-    public Estoque getEstoque() {
-        return estoque;
-    }
-    public void setEstoque(Estoque estoque) {
-        this.estoque = estoque;
-    }
     public void excluir() {
         this.existe = false;
     }
 
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
-    }
-    public void setPreco(double preco) {
-        this.preco = preco;
-    }
-    public void setNome(String nome) {
-        this.nome = nome;
+    public boolean isExiste() {
+        return existe;
     }
 
-    // getters adicionados
+    // Getters e setters
+    public int getId() {
+        return id;
+    }
     public String getNome() {
         return nome;
     }
     public String getDescricao() {
         return descricao;
     }
-    public boolean isExiste() {
-        return existe;
+    public double getPreco() {
+        return preco;
+    }
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
+    public void setPreco(double preco) {
+        this.preco = preco;
     }
 }
